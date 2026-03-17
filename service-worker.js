@@ -5,7 +5,7 @@ const APP_SHELL = [
   "./styles.css",
   "./script.js",
   "./manifest.json",
-  "./assets/_MG_0745_edit_ (1).jpg",
+  "./assets/YDMW-303.JPEG",
   "./assets/marcus_williams_resume.pdf",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
