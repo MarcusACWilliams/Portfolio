@@ -200,6 +200,43 @@ li {
   margin: 0.25rem 0 0;
 }
 
+.project-embed-container {
+  margin-top: 1rem;
+  min-height: 420px;
+  border: 1px dashed rgba(0, 95, 115, 0.35);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 251, 0.95)),
+    radial-gradient(circle at top right, rgba(148, 210, 189, 0.18), transparent 42%);
+  overflow: hidden;
+}
+
+.project-embed-placeholder {
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.project-embed-placeholder h3 {
+  margin: 0.35rem 0;
+}
+
+.project-embed-placeholder p {
+  max-width: 52ch;
+  margin: 0;
+}
+
+.project-embed-eyebrow {
+  margin-bottom: 0.4rem;
+  color: var(--brand);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .contact-panel p {
   margin-top: 0;
 }
