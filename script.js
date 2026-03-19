@@ -6,6 +6,7 @@ if (yearEl) {
 const revealEls = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
+  // Reveal sections once as they enter the viewport, then stop observing them.
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
@@ -24,6 +25,7 @@ if ("IntersectionObserver" in window) {
 }
 
 if ("serviceWorker" in navigator) {
+  // Wait for the full page load so registration does not compete with initial rendering.
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js").catch((error) => {
       console.error("Service worker registration failed:", error);

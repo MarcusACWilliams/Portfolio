@@ -1,4 +1,5 @@
 const CACHE_NAME = "marcus-portfolio-v1";
+// Keep this list aligned with the static files required for the offline shell.
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -39,6 +40,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Serve cached assets first, then persist successful network responses for later visits.
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
