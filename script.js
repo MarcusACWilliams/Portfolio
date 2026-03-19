@@ -25,12 +25,44 @@ if ("IntersectionObserver" in window) {
 }
 
 if ("serviceWorker" in navigator) {
-  // Wait for the full page load so registration does not compete with initial rendering.
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js").catch((error) => {
-      console.error("Service worker registration failed:", error);
+  const isLocalhost =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+
+  // During local development, remove service workers/caches so Live Server always serves fresh files.
+  if (isLocalhost) {
+    window.addEventListener("load", async () => {
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        const hadRegistrations = registrations.length > 0;
+
+        await Promise.all(registrations.map((registration) => registration.unregister()));
+
+        if ("caches" in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map((key) => caches.delete(key)));
+        }
+
+        // One forced reload helps the browser release old SW control in local debugging sessions.
+        if (hadRegistrations && !sessionStorage.getItem("sw-cleanup-reloaded")) {
+          sessionStorage.setItem("sw-cleanup-reloaded", "1");
+          window.location.reload();
+          return;
+        }
+
+        sessionStorage.removeItem("sw-cleanup-reloaded");
+      } catch (error) {
+        console.error("Service worker cleanup failed:", error);
+      }
     });
-  });
+  } else {
+    // Wait for the full page load so registration does not compete with initial rendering.
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js").catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+    });
+  }
 }
 
 // Fetch public profile data from the GitHub REST API.
@@ -63,19 +95,22 @@ fetchGitHubProfile("MarcusACWilliams")
     console.error("Failed to fetch GitHub profile:", error);
   });
 
-  url = "https://github.com/MarcusACWilliams";
-  fetchContributorCount(url);
+// async function fetchContributorCount(url) {
+//   const puppeteer = require('puppeteer');
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
 
-async function fetchContributorCount(url) {
-  const puppeteer = require('puppeteer');
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+//   await page.goto(url);
 
-  await page.goto(url);
+//   contributionElement = await page.getElementByClassName("js-yearly-contributions");
+//   //const imgSrc = await page.$eval('img', img => img.src);
 
-  contributionElement = await page.getElementByClassName("js-yearly-contributions");
-  //const imgSrc = await page.$eval('img', img => img.src);
+//   console.log(contributionElement);
+//   await browser.close();
+// }
 
-  console.log(contributionElement);
-  await browser.close();
-}
+//   url = "https://github.com/MarcusACWilliams";
+  
+//   fetchContributorCount(url);
+
+

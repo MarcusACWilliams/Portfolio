@@ -1,53 +1,89 @@
 # Marcus Williams Portfolio
 
-Single-page developer portfolio built with semantic HTML, modern CSS, and lightweight JavaScript.
+A modern full-stack portfolio application built with **React** (frontend) and **Express/Node.js** (backend).
 
-This project is served as static files. There is no build pipeline, package manager, or bundler in the repo, so the main code that runs is the page script in `script.js` and the PWA service worker in `service-worker.js`.
+This project has been restructured from a static site into a full-stack web application with separate frontend and backend, enabling dynamic features, API integration, and scalable growth.
+
+## Quick Start
+
+### Prerequisites
+- Node.js 14+ and npm
+
+### Installation & Development
+
+```bash
+# Install all dependencies
+npm run install-all
+
+# Start both frontend (React) and backend (Express) in development mode
+npm run dev
+```
+
+The app will be available at `http://localhost:3000` (React dev server).
 
 ## Project Structure
 
-```text
+```
 .
-|-- index.html
-|-- manifest.json
-|-- service-worker.js
-|-- styles.css
-|-- script.js
-`-- assets
-    |-- YDMW-303.JPEG
-    |-- marcus_williams_resume.pdf
-    |-- icons/
-    `-- splash/
+├── client/                    # React frontend
+│   ├── public/               # Static assets
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── assets/
+│   └── src/
+│       ├── components/       # React components
+│       ├── hooks/            # Custom hooks
+│       ├── App.jsx
+│       └── index.css
+│
+├── server/                    # Express backend
+│   ├── index.js              # Express server
+│   └── package.json
+│
+├── package.json              # Root (monorepo scripts)
+└── DEVELOPMENT.md            # Detailed development guide
 ```
 
-## Runtime Scripts
+## Available Scripts
 
-### `script.js`
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start client and server concurrently |
+| `npm run server` | Start Express server only (auto-restart on changes) |
+| `npm run client` | Start React dev server only |
+| `npm run build` | Build React app for production |
+| `npm start` | Run production server (requires `npm run build` first) |
 
-This file runs in the browser when the portfolio page loads.
+## Backend API
 
-- Updates the footer year automatically.
-- Reveals sections as they scroll into view using `IntersectionObserver`.
-- Registers the PWA service worker after the `load` event.
+The Express server provides a GitHub profile API:
 
-Use this file for page-level interactions and lightweight client-side behavior.
+- **GET** `/api/github/profile/:username` — Fetch public GitHub user data
 
-### `service-worker.js`
+## Features
 
-This file runs separately from the page as the PWA service worker once the browser registers it.
+- ✅ React component-based architecture
+- ✅ Express backend with API routes
+- ✅ Professional styling with CSS Grid/Flexbox
+- ✅ GitHub API integration (via backend proxy)
+- ✅ PWA-ready (manifest.json)
+- ✅ Responsive design
+- ✅ Development hot-reload for both client & server
 
-- Pre-caches the files listed in `APP_SHELL` during install.
-- Removes old caches during activation.
-- Responds to GET requests with a cache-first strategy.
-- Falls back to `index.html` when a request fails while offline.
+## Important: Asset Setup
 
-If you add, remove, or rename cached files, update `APP_SHELL`. If the browser keeps serving stale assets after a service worker change, bump `CACHE_NAME`.
+Your existing assets need to be moved to the client:
 
-### `manifest.json`
+```bash
+# Copy from root to client/public/
+cp -r assets/* client/public/assets/
+```
 
-This file provides install metadata for the PWA.
-
-- App name and short name.
+Files needed in `client/public/assets/`:
+- `YDMW-303.JPEG`
+- `marcus_williams_resume.pdf`
+- `icons/` (app icons)
+- `splash/` (PWA splash screens)
 - Theme and background colors.
 - Standalone display mode.
 - Install icon definitions.
