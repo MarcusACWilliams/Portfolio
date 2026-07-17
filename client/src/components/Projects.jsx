@@ -2,26 +2,33 @@ import React from 'react';
 
 function Projects() {
   return (
-    <section className="section reveal" aria-labelledby="projects-title">
-      <div className="container panel">
-        <h2 id="projects-title">Projects</h2>
-        <p>
-          This space is reserved for interactive project demos. The container below can be used
-          to mount or embed a standalone web app directly into the portfolio.
-        </p>
-        <div 
-          className="project-embed-container" 
-          id="project-app-container" 
-          aria-label="Embedded project application container"
-        >
-          <div className="project-embed-placeholder">
-            <p className="project-embed-eyebrow">Embedded App Slot</p>
-            <h3>Project Showcase Container</h3>
+    <section id="projects" className="section">
+      <div className="container">
+        <div className="panel">
+          <h2>Projects</h2>
+
+          <article className="game-project">
+            <h3>Zombastic Survival Prototype</h3>
+
             <p>
-              Replace this placeholder with an iframe, script mount point, or another deployed
-              web application when the project is ready.
+              A Godot 3 top-down survival prototype featuring randomized
+              enemy waves, automatic targeting, health regeneration, and
+              a complete victory and restart loop.
             </p>
-          </div>
+
+            <div className="game-frame">
+              <iframe
+                src="/games/zombastic/"
+                title="Zombastic survival game demo"
+                allow="fullscreen"
+                allowFullScreen
+              />
+            </div>
+
+            <p className="game-help">
+              Click inside the game before using WASD or the arrow keys.
+            </p>
+          </article>
         </div>
       </div>
     </section>
