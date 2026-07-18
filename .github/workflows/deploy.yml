@@ -22,17 +22,6 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
 
         script: |
-          set -e
-
           cd /var/www/Portfolio
-
-          git fetch origin main
-          git reset --hard origin/main
-
-          npm install
-          cd client
-          npm install
-          npm run build
-          cd ..
-
+          git pull origin main
           sudo systemctl restart nginx
