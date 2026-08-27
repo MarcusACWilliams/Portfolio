@@ -1,185 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Marcus Williams | Software Engineer</title>
-    <meta
-      name="description"
-      content="Marcus Williams is a full-stack software engineer specializing in React, Node.js, C#, distributed systems, and enterprise financial platforms."
-    />
-    <meta name="theme-color" content="#0f1f31" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Marcus Portfolio" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-startup-image" href="assets/splash/launch.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <header class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-content reveal">
-        <img src="assets/YDMW-303.JPEG" alt="Marcus Williams headshot" class="profile-image" />
-
-        <div class="hero-copy">
-          <p class="eyebrow">Software Engineer</p>
-          <h1>Marcus Williams</h1>
-          <p class="subtitle">
-            Full-Stack Software Engineer focused on React, Node.js, C#, and distributed systems.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://github.com/MarcusACWilliams" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/marcus-williams-1a3b46135" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Marcus Williams | Software Engineer</title>
+  <meta name="description" content="Marcus Williams is a software engineer building full-stack applications, enterprise financial systems, test automation, and CI/CD workflows." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="portfolio-shell">
+    <a class="skip-link" href="#about">Skip to main content</a>
+    <aside class="sidebar">
+      <div class="identity-block">
+        <a class="home-link" href="#about" aria-label="Back to top"><h1>Marcus Williams</h1></a>
+        <p class="role">Software Engineer</p>
+        <p class="tagline">I build reliable software systems that solve real-world problems and make an impact.</p>
+      </div>
+      <div class="social-bar mobile-social" aria-label="Social profiles">
+        <a href="https://github.com/MarcusACWilliams" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.24.78-.55v-2.18c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.54-.29-5.21-1.27-5.21-5.59 0-1.23.44-2.24 1.18-3.03-.12-.29-.51-1.45.11-2.99 0 0 .96-.31 3.12 1.16a10.9 10.9 0 0 1 5.69 0c2.16-1.47 3.11-1.16 3.11-1.16.62 1.54.23 2.7.11 2.99.74.79 1.18 1.8 1.18 3.03 0 4.33-2.68 5.29-5.23 5.57.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/marcus-williams-1a3b46135" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.32 7.77A2.3 2.3 0 1 0 5.3 3.18a2.3 2.3 0 0 0 .02 4.59ZM3.33 20.67h3.98V9.1H3.33v11.57ZM9.71 9.1h3.81v1.58h.05c.53-1 1.83-2.06 3.77-2.06 4.04 0 4.78 2.66 4.78 6.12v5.93h-3.97v-5.26c0-1.25-.02-2.87-1.75-2.87-1.75 0-2.02 1.37-2.02 2.78v5.35H9.71V9.1Z"/></svg></a>
+        <span class="social-placeholder" aria-label="CodePen profile not configured" title="CodePen profile not configured"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 1.8 10 6.66v7.08L12 22.2 2 15.54V8.46L12 1.8Zm-1 3.15L5.18 8.82 11 12.7V4.95Zm2 0v7.75l5.82-3.88L13 4.95Zm-7.8 6.2-1.2.8v.1l1.2.8 3.4 2.27 2.6-1.73-6-4Zm13.6 0-6 4 2.6 1.73 3.4-2.27 1.2-.8v-.1l-1.2-.8ZM11 16.32l-4 2.66L11 21.65v-5.33Zm2 0v5.33l4-2.67-4-2.66Z"/></svg></span>
+        <span class="social-placeholder" aria-label="Instagram profile not configured" title="Instagram profile not configured"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.1 2.75h9.8a4.36 4.36 0 0 1 4.35 4.35v9.8a4.36 4.36 0 0 1-4.35 4.35H7.1a4.36 4.36 0 0 1-4.35-4.35V7.1A4.36 4.36 0 0 1 7.1 2.75Zm0 1.8A2.55 2.55 0 0 0 4.55 7.1v9.8a2.55 2.55 0 0 0 2.55 2.55h9.8a2.55 2.55 0 0 0 2.55-2.55V7.1a2.55 2.55 0 0 0-2.55-2.55H7.1Zm10.25 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.25A4.75 4.75 0 1 1 12 16.75 4.75 4.75 0 0 1 12 7.25Zm0 1.8a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"/></svg></span>
+      </div>
+      <nav class="table-of-contents" aria-label="Page sections">
+        <a class="toc-link active" href="#about"><span class="toc-line"></span>ABOUT</a>
+        <a class="toc-link" href="#experience"><span class="toc-line"></span>EXPERIENCE</a>
+        <a class="toc-link" href="#projects"><span class="toc-line"></span>PROJECTS</a>
+      </nav>
+      <div class="sidebar-social">
+        <div class="social-bar" aria-label="Social profiles">
+          <a href="https://github.com/MarcusACWilliams" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.24.78-.55v-2.18c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.54-.29-5.21-1.27-5.21-5.59 0-1.23.44-2.24 1.18-3.03-.12-.29-.51-1.45.11-2.99 0 0 .96-.31 3.12 1.16a10.9 10.9 0 0 1 5.69 0c2.16-1.47 3.11-1.16 3.11-1.16.62 1.54.23 2.7.11 2.99.74.79 1.18 1.8 1.18 3.03 0 4.33-2.68 5.29-5.23 5.57.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/marcus-williams-1a3b46135" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.32 7.77A2.3 2.3 0 1 0 5.3 3.18a2.3 2.3 0 0 0 .02 4.59ZM3.33 20.67h3.98V9.1H3.33v11.57ZM9.71 9.1h3.81v1.58h.05c.53-1 1.83-2.06 3.77-2.06 4.04 0 4.78 2.66 4.78 6.12v5.93h-3.97v-5.26c0-1.25-.02-2.87-1.75-2.87-1.75 0-2.02 1.37-2.02 2.78v5.35H9.71V9.1Z"/></svg></a>
+          <span class="social-placeholder" title="CodePen profile not configured"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m12 1.8 10 6.66v7.08L12 22.2 2 15.54V8.46L12 1.8Zm-1 3.15L5.18 8.82 11 12.7V4.95Zm2 0v7.75l5.82-3.88L13 4.95Zm-7.8 6.2-1.2.8v.1l1.2.8 3.4 2.27 2.6-1.73-6-4Zm13.6 0-6 4 2.6 1.73 3.4-2.27 1.2-.8v-.1l-1.2-.8ZM11 16.32l-4 2.66L11 21.65v-5.33Zm2 0v5.33l4-2.67-4-2.66Z"/></svg></span>
+          <span class="social-placeholder" title="Instagram profile not configured"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.1 2.75h9.8a4.36 4.36 0 0 1 4.35 4.35v9.8a4.36 4.36 0 0 1-4.35 4.35H7.1a4.36 4.36 0 0 1-4.35-4.35V7.1A4.36 4.36 0 0 1 7.1 2.75Zm0 1.8A2.55 2.55 0 0 0 4.55 7.1v9.8a2.55 2.55 0 0 0 2.55 2.55h9.8a2.55 2.55 0 0 0 2.55-2.55V7.1a2.55 2.55 0 0 0-2.55-2.55H7.1Zm10.25 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.25A4.75 4.75 0 1 1 12 16.75 4.75 4.75 0 0 1 12 7.25Zm0 1.8a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9Z"/></svg></span>
         </div>
       </div>
-    </header>
+    </aside>
 
-    <main id="main-content">
-      <section class="section reveal" aria-labelledby="summary-title">
-        <div class="container panel">
-          <h2 id="summary-title">Professional Summary</h2>
-          <p>
-            Full-stack software engineer with 6+ years of experience building enterprise financial
-            and trading applications. Specialized in React, Node.js, C#, and SQL Server with a
-            strong background in microservices architecture, performance optimization, and CI/CD
-            automation.
-          </p>
+    <main class="content" id="main-content">
+      <section id="about" class="content-section about-section" data-nav-section>
+        <h2 class="section-label">About</h2>
+        <div class="prose">
+          <p>I'm a software engineer focused on building dependable, user-centered applications. My work spans full-stack product development, enterprise financial systems, test automation, and CI/CD.</p>
+          <p>I've worked across secure fintech environments where correctness, maintainability, and clear system boundaries matter. I enjoy connecting frontend experiences to robust backend services and improving the engineering workflows around them.</p>
+          <p>My core toolkit includes <strong>C#</strong>, <strong>Java</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Node.js</strong>, <strong>SQL Server</strong>, automated testing, and cloud deployment on <strong>AWS</strong>.</p>
         </div>
+        <div class="skill-strip" aria-label="Core skills"><span>C#</span><span>Java</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>SQL Server</span><span>Selenium</span><span>GitHub Actions</span><span>AWS</span></div>
       </section>
 
-      <section class="section reveal" aria-labelledby="skills-title">
-        <div class="container panel">
-          <h2 id="skills-title">Technical Skills</h2>
-          <div class="skills-grid">
-            <article>
-              <h3>Languages</h3>
-              <p>Python, C#, JavaScript, SQL</p>
-            </article>
-
-            <article>
-              <h3>Frontend</h3>
-              <p>React, HTML, CSS, SCSS</p>
-            </article>
-
-            <article>
-              <h3>Backend</h3>
-              <p>Node.js, Express, .NET</p>
-            </article>
-
-            <article>
-              <h3>Databases</h3>
-              <p>SQL Server, MongoDB</p>
-            </article>
-
-            <article>
-              <h3>Testing</h3>
-              <p>Selenium, Cucumber, TestNG, Jest</p>
-            </article>
-
-            <article>
-              <h3>DevOps</h3>
-              <p>GitHub Actions, CI/CD Pipelines</p>
-            </article>
-          </div>
+      <section id="experience" class="content-section experience-section" data-nav-section>
+        <h2 class="section-label">Experience</h2>
+        <div class="experience-list">
+          <article class="experience-card"><p class="experience-period">2022 — PRESENT</p><div class="experience-body"><h3>Software Developer <span>· Vertex Incorporated</span></h3><p>Build and improve enterprise financial applications, automation, and delivery workflows across a cross-functional engineering environment.</p><div class="tag-list"><span>C#</span><span>React</span><span>Node.js</span><span>SQL Server</span><span>Selenium</span><span>CI/CD</span></div></div></article>
+          <article class="experience-card"><p class="experience-period">2019 — 2022</p><div class="experience-body"><h3>Software Engineer <span>· Entech Consulting</span></h3><p>Developed multi-tier applications, ERP integrations, reporting, and backend services for financial-services clients.</p><div class="tag-list"><span>C#</span><span>JavaScript</span><span>SQL Server</span><span>SSRS</span><span>SuiteScript</span></div></div></article>
+          <article class="experience-card"><p class="experience-period">2018 — 2019</p><div class="experience-body"><h3>Software Developer <span>· Shadow Financial Systems</span></h3><p>Built backend features for securities processing and reconciliation systems supporting financial workflows.</p><div class="tag-list"><span>C#</span><span>SQL Server</span><span>.NET</span></div></div></article>
         </div>
+        <a class="text-link" href="assets/marcus_williams_resume.pdf" target="_blank" rel="noreferrer">View Full Résumé <span aria-hidden="true">↗</span></a>
       </section>
 
-      <section class="section reveal" aria-labelledby="experience-title">
-        <div class="container panel">
-          <h2 id="experience-title">Professional Experience</h2>
-
-          <article class="job">
-            <header>
-              <h3>Vertex Incorporated</h3>
-              <p class="job-title">Software Developer | 2022 - Present</p>
-            </header>
-            <ul>
-              <li>Developed full-stack application features using React and Node.js supporting enterprise financial workflows.</li>
-              <li>Refactored legacy .NET components into microservices reducing latency by 25%.</li>
-              <li>Optimized SQL Server queries and MongoDB data models for high-volume financial datasets.</li>
-              <li>Implemented CI/CD pipelines with GitHub Actions reducing release cycles by 40%.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <header>
-              <h3>Entech Consulting</h3>
-              <p class="job-title">Software Engineer | 2019 - 2022</p>
-            </header>
-            <ul>
-              <li>Developed multi-tier enterprise applications for Fortune 500 financial clients.</li>
-              <li>Built backend services supporting high-availability financial transaction processing.</li>
-              <li>Produced architecture documentation and testing frameworks.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <header>
-              <h3>Shadow Financial Systems</h3>
-              <p class="job-title">Software Developer | 2018 - 2019</p>
-            </header>
-            <ul>
-              <li>Built backend services for securities processing and reconciliation systems.</li>
-              <li>Developed platform features using C# and SQL supporting trading workflows.</li>
-            </ul>
-          </article>
-        </div>
+      <section id="projects" class="content-section projects-section" data-nav-section>
+        <h2 class="section-label">Projects</h2>
+        <article class="project-card featured-project">
+          <div class="project-copy"><p class="project-kicker">Featured project</p><h3>Zombastic Survival Prototype <span aria-hidden="true">↗</span></h3><p>A Godot 3 top-down survival prototype with randomized enemy waves, automatic targeting, health regeneration, and a complete victory and restart loop.</p><div class="tag-list"><span>Godot 3</span><span>GDScript</span><span>Web Export</span><span>Game Systems</span></div></div>
+          <div class="game-frame"><iframe src="client/public/games/zombastic/" title="Zombastic survival game demo" allow="fullscreen"></iframe></div>
+          <p class="game-help">Click inside the game before using WASD or the arrow keys.</p>
+        </article>
+        <article class="project-card compact-project"><div class="project-mark" aria-hidden="true">MW</div><div><h3>Portfolio &amp; Deployment Pipeline</h3><p>Responsive React portfolio deployed to AWS EC2 with Nginx and automated GitHub Actions delivery.</p><div class="tag-list"><span>React</span><span>AWS EC2</span><span>Nginx</span><span>GitHub Actions</span></div></div></article>
       </section>
 
-      <section class="section reveal" aria-labelledby="projects-title">
-        <div class="container panel">
-          <h2 id="projects-title">Projects</h2>
-          <p>
-            This space is reserved for interactive project demos. The container below can be used
-            to mount or embed a standalone web app directly into the portfolio.
-          </p>
-          <div class="project-embed-container" id="project-app-container" aria-label="Embedded project application container">
-            <div class="project-embed-placeholder">
-              <p class="project-embed-eyebrow">Embedded App Slot</p>
-              <h3>Project Showcase Container</h3>
-              <p>
-                Replace this placeholder with an iframe, script mount point, or another deployed
-                web application when the project is ready.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section class="content-section contact-section" aria-labelledby="contact-heading">
+        <h2 class="section-label">Contact</h2>
+        <p id="contact-heading">Open to software engineering opportunities and conversations about building reliable products.</p>
+        <div class="contact-links"><a href="mailto:hello@marcuswilliams.dev">Email me <span aria-hidden="true">↗</span></a><a href="assets/marcus_williams_resume.pdf" download="Marcus-Williams-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></div>
       </section>
-
-      <section class="section reveal" aria-labelledby="contact-title">
-        <div class="container panel contact-panel">
-          <h2 id="contact-title">Contact</h2>
-          <p>
-            Open to full-time software engineering opportunities and consulting engagements.
-          </p>
-          <div class="contact-actions">
-            <a href="mailto:hello@marcuswilliams.dev">Email: hello@marcuswilliams.dev</a>
-            <a href="assets/marcus_williams_resume.pdf" download="Marcus-Williams-Resume.pdf">Download Resume (PDF)</a>
-          </div>
-        </div>
-      </section>
+      <footer class="site-footer"><p>Designed and built by Marcus Williams.</p></footer>
     </main>
-
-    <footer class="footer">
-      <div class="container">
-        <p><span id="year"></span> Marcus Williams</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
