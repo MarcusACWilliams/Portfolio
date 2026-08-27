@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.24.78-.55v-2.18c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.54-.29-5.21-1.27-5.21-5.59 0-1.23.44-2.24 1.18-3.03-.12-.29-.51-1.45.11-2.99 0 0 .96-.31 3.12 1.16a10.9 10.9 0 0 1 5.69 0c2.16-1.47 3.11-1.16 3.11-1.16.62 1.54.23 2.7.11 2.99.74.79 1.18 1.8 1.18 3.03 0 4.33-2.68 5.29-5.23 5.57.41.36.78 1.05.78 2.12v3.14c0 .31.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg>
@@ -72,6 +72,15 @@ function SectionHeader({ children }) {
 }
 
 function App() {
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 640px)').matches);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 640px)');
+    const handleMobileChange = (event) => setIsMobile(event.matches);
+    mobileQuery.addEventListener('change', handleMobileChange);
+    return () => mobileQuery.removeEventListener('change', handleMobileChange);
+  }, []);
+
   useEffect(() => {
     const sections = [...document.querySelectorAll('[data-nav-section]')];
     const links = [...document.querySelectorAll('.toc-link')];
@@ -163,27 +172,29 @@ function App() {
         <section id="projects" className="content-section projects-section" data-nav-section>
           <SectionHeader>Projects</SectionHeader>
 
-          <article className="project-card featured-project">
-            <div className="project-copy">
-              <p className="project-kicker">Featured project</p>
-              <h3>Zombastic Survival Prototype <span aria-hidden="true">↗</span></h3>
-              <p>
-                A Godot 3 top-down survival prototype with randomized enemy waves, automatic targeting, health regeneration, and a complete victory and restart loop.
-              </p>
-              <div className="tag-list">
-                <span>Godot 3</span><span>GDScript</span><span>Web Export</span><span>Game Systems</span>
+          {!isMobile && (
+            <article className="project-card featured-project">
+              <div className="project-copy">
+                <p className="project-kicker">Featured project</p>
+                <h3>Zombastic Survival Prototype <span aria-hidden="true">↗</span></h3>
+                <p>
+                  A Godot 3 top-down survival prototype with randomized enemy waves, automatic targeting, health regeneration, and a complete victory and restart loop.
+                </p>
+                <div className="tag-list">
+                  <span>Godot 3</span><span>GDScript</span><span>Web Export</span><span>Game Systems</span>
+                </div>
               </div>
-            </div>
-            <div className="game-frame">
-              <iframe
-                src="/games/zombastic/"
-                title="Zombastic survival game demo"
-                allow="fullscreen"
-                allowFullScreen
-              />
-            </div>
-            <p className="game-help">Click inside the game before using WASD or the arrow keys.</p>
-          </article>
+              <div className="game-frame">
+                <iframe
+                  src="/games/zombastic/"
+                  title="Zombastic survival game demo"
+                  allow="fullscreen"
+                  allowFullScreen
+                />
+              </div>
+              <p className="game-help">Click inside the game before using WASD or the arrow keys.</p>
+            </article>
+          )}
 
           <article className="project-card compact-project">
             <div className="project-mark" aria-hidden="true">MW</div>

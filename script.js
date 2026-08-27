@@ -16,3 +16,15 @@ if ("IntersectionObserver" in window && sections.length && links.length) {
 
   sections.forEach((section) => observer.observe(section));
 }
+
+const gameProject = document.querySelector("[data-game-project]");
+if (gameProject) {
+  const mobileQuery = window.matchMedia("(max-width: 640px)");
+  const gameFrame = gameProject.querySelector("iframe[data-src]");
+
+  if (mobileQuery.matches) {
+    gameProject.remove();
+  } else if (gameFrame) {
+    gameFrame.src = gameFrame.dataset.src;
+  }
+}
